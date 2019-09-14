@@ -9,30 +9,69 @@
 </head>
 
 <body>
-    <h1>Daily Journal</h1>
-    <form class="daily-journal" action="">
-        <fieldset>
-            <label for="journalDate">Date of entry</label>
-            <input type="date" name="journalDate" id="journalDate">
-            <label for="conceptsCovered">Concepts Covered</label>
-            <input type="input" name="conceptsCovered" id="conceptsCovered">
-            <label for="journalEntry">Journal Entry</label>
-            <input type="textarea" name="journalEntry" id="journalEntry">
-            <select>
-                <option value="happy">happy</option>
-                <option value="sad">sad</option>
-                <option value="exhausted">exhausted</option>
-                <option value="jazzed">jazzed</option>
-                <option value="brain-fried">brain-fried</option>
-                <option value="confident">confident</option>
-                <option value="not-confident">not-confident</option>
-                <option value="hungry-for-food">hungry-for-food</option>
-                <option value="hungry-for-knowledge">hungry-for-knowledge</option>
-            </select>
-        </fieldset>
-    </form>
+    <!-- div wrapper -->
+    <div class="divWrapper">
+        <!--header wrapper  -->
+        <div class="headerWrapper">
+            <header>
+                <div>
+                    <nav>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </nav>
+                </div>
+            </header>
+            <!-- end header -->
+        </div>
+        <div>
+            <!-- begin main content -->
+            <main>
+                <article>
+                    <div>
+                        <h1>Daily Journal</h1>
+                    </div>
+                    <section>
+                        <form class="daily-journal" action="">
+                            <fieldset>
+                                <label for="journalDate">Date of entry</label>
+                                <input class="journalInput" type="date" name="journalDate" id="journalDate">
+                                <label for="conceptsCovered">Concepts Covered</label>
+                                <input class="journalInput" type="input" name="conceptsCovered" id="conceptsCovered">
+                                <label for="journalEntry">Journal Entry</label>
+                                <input class="journalInput" type="textarea" name="journalEntry" id="journalEntry">
+                                <select class="journalInput">
+                                    <option value="happy">happy</option>
+                                    <option value="sad">sad</option>
+                                    <option value="jazzed">jazzed</option>
+                                    
+                                </select>
+                            </fieldset>
+                            <button class="button"type="button">click</button>
 
+                        </form>
 
+                    </section>
+                    <div id="entries--container"> </div>
+                    <section id="date-container"></section>
+                    <section id="concept-container"></section>
+                    <section id="content-container"></section>
+                    <section id="mood-container"></section>
+               
+                </article>
+            
+            </main>
+            <!-- end main content -->
+        </div>
+
+    </div>
+    <script type="module" src="scripts/main.js"></script>
 </body>
 
 </html>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
