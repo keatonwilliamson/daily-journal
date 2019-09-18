@@ -106,29 +106,26 @@ const handler = {
       if (obj[prop] === value) {
         }
         else {
-            console.log("CHHHHHAAAAAANNNGGGGGGGGEEE")
             obj[prop] = value;
+            console.log("CHHHHHAAAAAANNNGGGGGGGGEEE", blockObject)
+            setPicture();
         }
       return true;
     }
   }
   
-//   const initialObj = {
-//     id: 1,
-//     name: 'Foo Bar'
-//   }
+  const setPicture = () => {
+    let r = blockObject.red
+    let g = blockObject.green
+    let b = blockObject.blue
+    document.querySelector("#color-box").innerHTML = `
+    <img class="dynamicPic pic-${r}-${g}-${b}" src="images/${r}-${g}-${b}.png" alt="${r}-${g}-${b}">`
+  }
+
+
   
   const proxiedObject = new Proxy(blockObject, handler);
   
-//   proxiedObj.age = 24
 
 
 
-
-
-
-// let changeable = onChange(blockArray, () => console.log("change"));
-
-// blockArray.onchange = () => {
-//    console.log
-// }
