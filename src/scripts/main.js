@@ -87,8 +87,8 @@ const colorChanger = () => {
     let g = document.querySelector("#greenRange").value;
     let b = document.querySelector("#blueRange").value;
     document.querySelector("#color-box").style.backgroundColor = `rgb(${r}, ${g}, ${b})`
-    // proxiedObject.red = Math.floor(r * (3 / 256))
-    // proxiedObject.green = Math.floor(g * (3 / 256))
+    proxiedObject.red = Math.floor(r * (3 / 256))
+    proxiedObject.green = Math.floor(g * (3 / 256))
     proxiedObject.blue = Math.floor(b * (3 / 256))
 }
 
