@@ -28,50 +28,50 @@
         <div>
             <!-- begin main content -->
             <main>
-                <article>
-                    <div>
-                        <h1>Daily Journal</h1>
+                <div>
+                    <h1>Daily Journal</h1>
+                </div>
+                <div class="slidersContainer">
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="255" value="0" class="slider" id="redRange">
                     </div>
-                    <section>
-                        <form class="daily-journal" action="">
-                            <fieldset>
-                                <label for="journalDate">Date of entry</label>
-                                <input class="journalInput" type="date" name="journalDate" id="journalDate">
-                                <label for="conceptsCovered">Concepts Covered</label>
-                                <input class="journalInput" type="input" name="conceptsCovered" id="conceptsCovered">
-                                <label for="journalEntry">Journal Entry</label>
-                                <input class="journalInput" type="textarea" name="journalEntry" id="journalEntry">
-                                <select class="journalInput">
-                                    <option value="happy">happy</option>
-                                    <option value="sad">sad</option>
-                                    <option value="jazzed">jazzed</option>
-                                    
-                                </select>
-                            </fieldset>
-                            <button class="button"type="button">click</button>
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="255" value="0" class="slider" id="greenRange">
+                    </div>
+                    <div class="slidecontainer">
+                        <input type="range" min="0" max="255" value="0" class="slider" id="blueRange">
+                    </div>
+                </div>
+                <div id="color-box">
+                    <div id="picture-container"></div>
+                </div>
+                <section>
+                    <form class="daily-journal" action="">
+                        <fieldset>
+                            <label for="journalDate">Date of entry</label>
+                            <input class="journalInput" type="date" name="journalDate" id="journalDate">
+                            <label for="conceptsCovered">Concepts Covered</label>
+                            <input class="journalInput" type="input" name="conceptsCovered" id="conceptsCovered">
+                            <label for="journalEntry">Journal Entry</label>
+                            <input class="journalInput" type="textarea" name="journalEntry" id="journalEntry">
+                            <select class="journalInput">
+                                <option value="happy">happy</option>
+                                <option value="sad">sad</option>
+                                <option value="jazzed">jazzed</option>
 
-                        </form>
+                            </select>
+                        </fieldset>
+                        <button class="button" type="button">click</button>
 
-                    </section>
-                    <div id="entries--container"> </div>
-                    <section id="date-container"></section>
-                    <section id="concept-container"></section>
-                    <section id="content-container"></section>
-                    <section id="mood-container"></section>
-               
-                </article>
-            
+                    </form>
+
+                </section>
+                <div id="entries--container"> </div>
             </main>
             <!-- end main content -->
         </div>
-
     </div>
     <script type="module" src="scripts/main.js"></script>
 </body>
 
 </html>
-
-<p></p>
-<p></p>
-<p></p>
-<p></p>

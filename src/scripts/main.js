@@ -20,7 +20,7 @@ const journalEntry = (thing) => {
 
 const journalBuilder = (entry) => {
     let colorchanger = ["red", "goldenrod", "blue", "green"]
-    let time = 500
+    let time = 200
     let values = Object.values(entry)
     let keys = Object.keys(entry)
     for (let k = 0; k < keys.length; k++) {
@@ -33,7 +33,7 @@ const journalBuilder = (entry) => {
                     if (funArray[((i * colorchanger.length) + c)] !== undefined) {
                         document.querySelector(`#${keys[k]}-container-${entry.id}`).innerHTML += `<span style="color:${colorchanger[c]};">${funArray[((i * colorchanger.length) + c)]}</span>`
                     }
-                }, (time * i) + ((time/colorchanger.length) * c))
+                }, (time * i) + ((time / colorchanger.length) * c))
             }
 
         }
@@ -55,11 +55,8 @@ const josh = (entry) => {
 document.querySelector(".button").addEventListener("click", event => {
     inputsArray = []
     pushInputsArray();
-    // console.log(journalEntry(inputsArray));
     API.postToJSON(journalEntry(inputsArray))
-
         .then(API.getFromJSON).then(entries => {
-            // console.log(entries)
             document.querySelector("#entries--container").innerHTML = ""
             forEachEntry(entries);
         })
@@ -67,9 +64,71 @@ document.querySelector(".button").addEventListener("click", event => {
 
 const forEachEntry = (entries) => {
     const allEntries = [...entries]
-    allEntries.forEach(entry => {
+    let sortedEntries = sorter(allEntries)
+    sortedEntries.forEach(entry => {
         josh(entry)
         journalBuilder(entry);
     })
 }
 
+const sorter = (array) => {
+    return array.sort((yeahhh, boiii) => boiii.id - yeahhh.id)
+}
+
+let allSliders = document.querySelectorAll(".slider")
+for (const slider of allSliders) {
+    slider.addEventListener("input", e => {
+        colorChanger();
+    })
+};
+
+const colorChanger = () => {
+    let r = document.querySelector("#redRange").value;
+    let g = document.querySelector("#greenRange").value;
+    let b = document.querySelector("#blueRange").value;
+    document.querySelector("#color-box").style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+    // proxiedObject.red = Math.floor(r * (3 / 256))
+    // proxiedObject.green = Math.floor(g * (3 / 256))
+    proxiedObject.blue = Math.floor(b * (3 / 256))
+}
+
+const blockObject = {
+    red: 0,
+    green: 0,
+    blue: 0
+}
+
+
+
+const handler = {
+    set: function(obj, prop, value) {
+    //   console.log(`${prop} is being set to ${value}`, blockObject);
+      if (obj[prop] === value) {
+        }
+        else {
+            console.log("CHHHHHAAAAAANNNGGGGGGGGEEE")
+            obj[prop] = value;
+        }
+      return true;
+    }
+  }
+  
+//   const initialObj = {
+//     id: 1,
+//     name: 'Foo Bar'
+//   }
+  
+  const proxiedObject = new Proxy(blockObject, handler);
+  
+//   proxiedObj.age = 24
+
+
+
+
+
+
+// let changeable = onChange(blockArray, () => console.log("change"));
+
+// blockArray.onchange = () => {
+//    console.log
+// }

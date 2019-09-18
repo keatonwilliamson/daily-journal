@@ -1,0 +1,32 @@
+.journal-entry {
+    border: 7px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+
+.slidecontainer {
+    display: flex;
+    transform: rotate(-90deg);  
+    justify-content: center;
+
+}
+.slidersContainer {
+    display: flex;
+    border: 7px solid black;
+    height: 150px;
+    justify-content: space-around;
+    align-items: center;
+}
+#color-box {
+    border: 3px solid black;
+    height: 500px;
+    width: 500px; 
+    background-color: black;
+}
+
+#picture-container {
+    border: 3px solid red;
+    width: 494px;
+    height: 494px;
+    position: relative;
+}
